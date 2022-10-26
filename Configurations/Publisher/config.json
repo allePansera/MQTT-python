@@ -1,4 +1,8 @@
 {
+  "idClient": "",
   "broker_ip" : "155.185.228.20",
-  "broker_port" : 7883
+  "broker_port" : 7883,
+  "username": "",
+  "password": "",
+  "topic": "/iot/user/demo/temperature"
 }

@@ -24,18 +24,15 @@ class MQTTPubSession:
         else:
             print(f'\n{userdata.__dict__} disconnected from the session.\n')
 
-    def __init__(self,idClient,username,password,PATH=None):
+    def __init__(self,PATH=None):
         """Il costruttore accetta i seguenti parametri:
-        - idClient
-        - username
-        - password
         - PATH (parametro addizionale nel caso in cui non si voglia usare il valore di default).
 
         L'IP e la porta del broker vengono recuperati dal file di configurazione."""
         self.path = MQTTPubSession.PATH if PATH is None else PATH
-        self.username = username
-        self.password = password
-        self.idClient = idClient
+        self.username = ConfigReader.read(self.path)['username']
+        self.password = ConfigReader.read(self.path)['password']
+        self.idClient = ConfigReader.read(self.path)['idClient']
         self.brokerIp = ConfigReader.read(self.path)['broker_ip']
         self.brokerPort = ConfigReader.read(self.path)['broker_port']
 

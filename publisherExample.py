@@ -3,12 +3,8 @@ from DataManager.Temperature import TemperatureManager
 from datetime import datetime
 import time
 
-#credenziali di accesso
-username, password = "", ""
-#id del publisher
-idPub = "publisher-0001"
 #viene generato un singolo publisher
-publisher = MQTTPubSession(username,password,idPub)
+publisher = MQTTPubSession()
 publisherSession = publisher.creaSessione()
 
 #genero dei dati casuali da inviare ai subscriber per un topic noto
