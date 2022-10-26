@@ -1,0 +1,5 @@
+{
+  "broker_ip" : "155.185.228.20",
+  "broker_port" : 7883,
+  "default_topic" : "/iot/user/demo/temperature"
+}
